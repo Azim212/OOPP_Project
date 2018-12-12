@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/HomeCSS.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300i" rel="stylesheet">
+	<link rel='stylesheet' type='text/css' href='../static/navbar.css'>
+
+    <meta charset="UTF-8">
+    <title>House Simulator</title>
+    <div id="navbar">
+		<div class="container1">
+			<p id="avatar">
+				<a id="Joshua" href=""><img src="../static/avatar1.png" id="avatar1"></a>
+			</p>
+		</div>
+		<div class="container2">
+			<a href="/" id="brand">logo</a>
+			<ul>
+				<li><a id="Azim" href="Sim.html">Home Simulator</a></li>
+				<li><a href="Sportshome.html">Sports Living</a></li>
+				<li><a id="Syafiq" href="shop.html">Shops</a></li>
+			</ul>
+		</div>
+    </div>
+</head>
+<body>
+<br>
+<br>
+<br>
+    <div id="user_input">
+        <form method="POST">
+
+            <div><label for="lb">How many light bulbs and of which type do you have at home?</label></div>
+            <div class="form-row">
+                <div class="form-group col-xs-1">{{ calc.led.label}} {{ calc.led(class_="form-control", value_=0) }}</div>
+                <div class="form-group col-xs-1">{{ calc.cfl.label}} {{ calc.cfl(class_='form-control', value_=0) }}</div>
+                <div class="form-group col-xs-1">{{ calc.inc.label}} {{ calc.inc(class_='form-control', value_=0) }}</div>
+            </div>
+            <div class="form-group">
+            {{ calc.toish.label }} {{ calc.toish(class_='form-control', value_=1) }}
+            {{ calc.toitype.label }} {{ calc.toitype(class_='form-control') }}
+            </div>
+            <div>{{ calc.submit(class_="btn btn-primary") }}</div>
+        </form>
+    </div>
+<!--
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Password</label>
+      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address 2</label>
+    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">State</label>
+      <select id="inputState" class="form-control">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputZip">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <label class="form-check-label" for="gridCheck">
+        Check me out
+      </label>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Sign in</button>
+</form>
+-->
+</body>
+</html>
