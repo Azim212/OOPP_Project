@@ -28,21 +28,14 @@
 <br>
 <br>
 <br>
-    <div id="user_input">
-        <form method="POST">
-
-            <div><label for="lb">How many light bulbs and of which type do you have at home?</label></div>
-            <div class="form-row">
-                <div class="form-group col-xs-1">{{ calc.led.label}} {{ calc.led(class_="form-control", value_=0) }}</div>
-                <div class="form-group col-xs-1">{{ calc.cfl.label}} {{ calc.cfl(class_='form-control', value_=0) }}</div>
-                <div class="form-group col-xs-1">{{ calc.inc.label}} {{ calc.inc(class_='form-control', value_=0) }}</div>
-            </div>
-            <div class="form-group">
-            {{ calc.toish.label }} {{ calc.toish(class_='form-control', value_=1) }}
-            {{ calc.toitype.label }} {{ calc.toitype(class_='form-control') }}
-            </div>
-            <div>{{ calc.submit(class_="btn btn-primary") }}</div>
-        </form>
-    </div>
+<div id="user_output">
+    <ul class="display_info">
+        <li>You have <span class="number">{{ calc.led.data }}</span> LED light bulb(s).</li>
+        <li>You have <span class="number">{{ calc.cfl.data }}</span> CFL light bulb(s).</li>
+        <li>You have <span class="number">{{ calc.inc.data }}</span> Incandescent light bulb(s).</li>
+        <li>You have <span class="number">{{ calc.toish.data }}</span> bathroom(s).</li>
+        <li>You use <span class="number">{{ calc.toitype.data }}</span> Toilet(s).</li>
+    </ul>
+</div>
 </body>
 </html>
