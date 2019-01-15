@@ -2,7 +2,6 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, IntegerField, RadioField, SelectField, Form
 from wtforms.validators import data_required, length, optional
 
-
 class simData(FlaskForm):
     led = IntegerField(u'LED', validators=[data_required], default=0)
     cfl = IntegerField(u'CFL', validators=[data_required], default=0)

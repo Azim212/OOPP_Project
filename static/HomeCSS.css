@@ -46,13 +46,39 @@ body {
 
 }
 
+#user_output {
+    background-color: aliceblue;
+    border-top: 3px solid dimgray;
+    border-left: 3px solid dimgray;
+    border-right: 3px solid dimgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 30px;
+    font-size: 20px;
+}
+
 .number {
     color: brown;
 }
 
+#redo {
+    text-align:center;
+    border-left: 3px solid dimgray;
+    border-right: 3px solid dimgray;
+    border-bottom: 3px solid dimgray;
+    background-color: lightgreen;
+    padding: 5px;
+    font-size: 20px;
 
+}
 
-
+#redo:hover {
+    background-color: darkturquoise;
+    font-weight:bold;
+    color: white;
+}
 
 
 
