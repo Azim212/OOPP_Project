@@ -11,7 +11,6 @@ body {
 #Desc h3 {
 	font-size: 25px;
 	margin-top: 50px;
-
 }
 
 #Links {
@@ -63,25 +62,40 @@ body {
     color: brown;
 }
 
-#redo {
-    text-align:center;
-    border-left: 3px solid dimgray;
-    border-right: 3px solid dimgray;
-    border-bottom: 3px solid dimgray;
-    background-color: lightgreen;
-    padding: 5px;
-    font-size: 20px;
+.button {
+    border-left: 3px solid dimgray;!important;
+    border-right: 3px solid dimgray;!important;
+    border-bottom: 3px solid dimgray;!important;
+    background-color: lightgreen;!important;
+    padding: 10px;
+    font-size: 20px;!important;
+    display:flex;
+    text-decoration:none;
+    text-align:center;!important;
+    color: black;
 
 }
 
-#redo:hover {
-    background-color: darkturquoise;
-    font-weight:bold;
-    color: white;
+.button:hover {
+    background-color: darkturquoise;!important;
+    font-weight:bold;!important;
+    color: white;!important;
+    text-decoration:none;
+
 }
 
+#reedo {
+    text-align: center;
+}
 
+#submit {
+    background-color:lightgreen;
+    border-color: dimgray;
+    color: black;
+}
 
-
-
-
+#submit:hover {
+    background-color: darkturquoise;!important;
+    font-weight:bold;!important;
+    color: white;!important;
+}
