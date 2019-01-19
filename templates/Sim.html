@@ -30,7 +30,9 @@
 <br>
     <div id="user_input">
         <form method="POST">
-
+            {% if error %}
+            <div id="error">{{ error }}</div>
+            {% endif %}
             <div><label for="lb">How many light bulbs and of which type do you have at home?</label></div>
             <div class="form-row">
                 <div class="form-group col-xs-1">{{ calc.led.label}} {{ calc.led(class_="form-control", value_=0) }}</div>

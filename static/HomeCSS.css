@@ -99,3 +99,13 @@ body {
     font-weight:bold;!important;
     color: white;!important;
 }
+
+#error {
+    background-color: #ff484d;
+    border: 2px solid dimgray;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    color: #f0f8ff;
+    font-weight: bold;
+}
