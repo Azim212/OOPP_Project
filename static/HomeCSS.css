@@ -46,46 +46,29 @@ body {
 }
 
 #user_output {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
     background-color: aliceblue;
-    border-top: 3px solid dimgray;
-    border-left: 3px solid dimgray;
-    border-right: 3px solid dimgray;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    padding-top: 30px;
+    border: 3px solid dimgray;
+    border-radius: 10px;
     font-size: 20px;
+    width: 500px;
+}
+
+#user_output p {
+    text-align: center;
+    margin: 10px;
+    border: 0 solid dimgray;
+    border-radius: 10px;
+    padding:3px;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .number {
     color: brown;
-}
-
-.button {
-    border-left: 3px solid dimgray;!important;
-    border-right: 3px solid dimgray;!important;
-    border-bottom: 3px solid dimgray;!important;
-    background-color: lightgreen;!important;
-    padding: 10px;
-    font-size: 20px;!important;
-    display:flex;
-    text-decoration:none;
-    text-align:center;!important;
-    color: black;
-
-}
-
-.button:hover {
-    background-color: darkturquoise;!important;
-    font-weight:bold;!important;
-    color: white;!important;
-    text-decoration:none;
-
-}
-
-#reedo {
-    text-align: center;
 }
 
 #submit {
@@ -100,12 +83,26 @@ body {
     color: white;!important;
 }
 
+#redo {
+    background-color:lightgreen;
+    border-color: dimgray;
+    color: black;
+}
+
+#redo:hover {
+    background-color: darkturquoise;!important;
+    font-weight:bold;!important;
+    color: white;!important;
+}
+
 #error {
     background-color: #ff484d;
     border: 2px solid dimgray;
     border-radius: 10px;
     padding: 5px;
     text-align: center;
-    color: #f0f8ff;
+    color: white;
     font-weight: bold;
+    margin-bottom: 5px;
+    font-family: 'Trebuchet MS';
 }
