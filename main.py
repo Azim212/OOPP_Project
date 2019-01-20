@@ -25,7 +25,7 @@ def sim():
             simStorage['toiletType'] = calc.toitype.data
             return render_template("SimResults.html", calc=calc)
         else:
-            error = 'Please enter numbers only.'
+            error = 'Only numbers lower than 100 are allowed.'
             return render_template("Sim.html", calc=calc, error=error)
     else:
         return render_template("Sim.html", calc=calc, error=error)
