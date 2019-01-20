@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, flash
 from simData import *
 import shelve
+import AdaptedSimulationCode as simCode
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'iufnaofiLKE'
 simStorage = shelve.open('simStorage')
@@ -37,7 +38,8 @@ def calc():
     inc = simStorage['incNum']
     toi = simStorage['toiletNum']
     toitype = simStorage['toiletType']
-    return render_template("SimCalculation.html", led=led, cfl=cfl, inc=inc, toi=toi, toitype=toitype)
+    finalPrice = simCode.calcPrice()
+    return render_template("SimCalculation.html", led=led, cfl=cfl, inc=inc, toi=toi, toitype=toitype, finalPrice=finalPrice)
 
 
 if __name__ == '__main__':
