@@ -1,5 +1,5 @@
 import shelve
-simStorage = shelve.open('SimStorage')
+simStorage = shelve.open('simStorage')
 
 
 # Data for light bulbs and their wattage: 'https://www.noao.edu/education/QLTkit/ACTIVITY_Documents/Energy/TypesofLights.pdf'
@@ -31,7 +31,36 @@ class incandescent(lightbulb):
         super().__init__('Incandescent', 40, amount)
 
 
-def calcPrice():
+class toilet:
+    def __init__(self, type, lpf, number):
+        self.__type = type
+        self.__lpf = lpf
+        self.__number = number
+
+    def get_number(self):
+        return self.__number
+
+    def get_lpf(self):
+        return self.__lpf
+
+class old(toilet):
+    def __init__(self, number):
+        super().__init__('Old', 10, number)
+
+class conventional(toilet):
+    def __init__(self, number):
+        super().__init__('Conventional ', 6, number)
+
+class hef(toilet):
+    def __init__(self, number):
+        super().__init__('HEF', 4.5, number)
+
+
+def calcWatt():
+    pass
+
+
+def calcWattPrice():
     ledEx = led(simStorage['ledNum'])
     cflEx = cfl(simStorage['cflNum'])
     incEx = incandescent(simStorage['incNum'])
@@ -50,9 +79,21 @@ def calcPrice():
     finalPrice = calcLED * amtLED + calcCFL * amtCFL + calcINC * amtINC
     return round(finalPrice, 2)
 
-
-
-
+def calcLitre():
+    toiNum = simStorage['toiletNum']
+    toitype = simStorage['toiletType']
+    if toitype == 'Old':
+        toilet = old(toiNum)
+        lpd = toilet.get_number() * toilet.get_lpf() * 24 * 6  # 6 is the average number of times a person flushes a day
+        return lpd
+    elif toitype == 'Conventional':
+        toilet = conventional(toiNum)
+        lpd = toilet.get_number() * toilet.get_lpf() * 24 * 6  # 6 is the average number of times a person flushes a day
+        return lpd
+    elif toitype == 'High Efficiency':
+        toilet = hef(toiNum)
+        lpd = toilet.get_number() * toilet.get_lpf() * 24 * 6  # 6 is the average number of times a person flushes a day
+        return lpd
 
 
 
