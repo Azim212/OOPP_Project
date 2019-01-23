@@ -22,25 +22,25 @@ def sim():
                 simStorage['incNum'] = int(calc.inc.data)
                 simStorage['toiletNum'] = int(calc.toish.data)
                 simStorage['toiletType'] = calc.toitype.data
-                return render_template("SimResults.html", calc=calc)
+            finalWatt = simCode.calcWatt()
+            finalPrice = simCode.calcWattPrice()
+            cubmtrperday = simCode.calcCubmtr()
+            cubmtrPrice = simCode.calcCubmtrPrice()
+            dailyWatt = round(finalWatt/30, 2)
+            dailyPrice = round(finalPrice/30, 2)
+            dailyCubmtr = round(cubmtrperday/30, 2)
+            dailyCubmtrPrice = round(cubmtrPrice/30, 2)
+            yearlyWatt = round(finalWatt * 12, 2)
+            yearlyPrice = round(finalPrice * 12, 2)
+            yearlyCubmtr = round(cubmtrperday * 12, 2)
+            yearlyCubmtrPrice = round(cubmtrPrice * 12, 2)
+            openTab = True
+            return render_template("Sim.html", openTab=openTab, yearlyCubmtrPrice=yearlyCubmtrPrice, yearlyCubmtr=yearlyCubmtr, yearlyPrice=yearlyPrice, yearlyWatt=yearlyWatt, dailyCubmtrPrice=dailyCubmtrPrice, dailyCubmtr=dailyCubmtr, dailyPrice=dailyPrice, dailyWatt=dailyWatt, finalPrice=finalPrice, cubmtrperday=cubmtrperday, cubmtrPrice=cubmtrPrice, finalWatt=finalWatt, calc=calc)
         else:
             error = 'Only numbers lower than 100 are allowed.'
             return render_template("Sim.html", calc=calc, error=error)
     else:
         return render_template("Sim.html", calc=calc, error=error)
-
-
-@app.route('/SimCalculation.html')
-def calc():
-    with shelve.open('simStorage') as simStorage:
-        led = simStorage['ledNum']
-        cfl = simStorage['cflNum']
-        inc = simStorage['incNum']
-        toi = simStorage['toiletNum']
-        toitype = simStorage['toiletType']
-        finalPrice = simCode.calcWattPrice()
-        litreperday = simCode.calcLitre()
-        return render_template("SimCalculation.html", led=led, cfl=cfl, inc=inc, toi=toi, toitype=toitype, finalPrice=finalPrice, litreperday=litreperday)
 
 
 if __name__ == '__main__':
