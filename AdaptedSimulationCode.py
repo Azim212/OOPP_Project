@@ -127,10 +127,29 @@ def calcCubmtrPrice():
         return price
 
 
+def tipsElc():
+    tiplist = []
+    with shelve.open('simStorage') as simStorage:
+        cfl = simStorage['cflNum']
+        inc = simStorage['incNum']
+    if inc > 0:
+        tiplist.append('replaceInc')
+    if cfl > 0:
+        tiplist.append('replaceCfl')
+    if cfl == 0 and inc == 0:
+        tiplist.append('saveSmartE')
+    return tiplist
 
 
-
-
+def tipsWtr():
+    tiplist = []
+    with shelve.open('simStorage') as simStorage:
+        toitype = simStorage['toiletType']
+    if toitype == 'Old' or toitype == 'Conventional':
+        tiplist.append('replaceOldorConv')
+    else:
+        tiplist.append('saveSmartW')
+    return tiplist
 
 
 
