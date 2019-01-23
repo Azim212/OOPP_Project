@@ -57,16 +57,16 @@
             <button class="tablinks" onclick="openTimeFrames(event, 'Yearly')">Yearly</button>
         </div>
         <div id="Daily" class="tabcontent">
-            {% if dailyPrice %}<p>Every day, you spend <span class="number">${{ dailyPrice }}</span> on electricity and use <span class="number">{{ dailyWatt }} kilowatts</span> of electricity.</p>{% endif %}
-            {% if dailyCubmtrPrice %}<p>Every day, you spend <span class="number">${{ dailyCubmtrPrice }}</span> on water and use <span class="number">{{ dailyCubmtr }} cubic metres</span> of water.</p>{% endif %}
+            {% if dailyPrice %}<p>You spend <span class="number">${{ dailyPrice }}</span> on electricity and use <span class="number">{{ dailyWatt }} kilowatts</span> of electricity.</p>{% endif %}
+            {% if dailyCubmtrPrice %}<p>You spend <span class="number">${{ dailyCubmtrPrice }}</span> on water and use <span class="number">{{ dailyCubmtr }} cubic metres</span> of water.</p>{% endif %}
         </div>
         <div id="Monthly" class="tabcontent">
-            {% if finalPrice %}<p>Every month, you spend <span class="number">${{ finalPrice }}</span> on electricity and use <span class="number">{{ finalWatt }} kilowatts</span> of electricity.</p>{% endif %}
-            {% if cubmtrPrice %}<p>Every month, you spend <span class="number">${{ cubmtrPrice }}</span> on water and use <span class="number">{{ cubmtrperday }} cubic metres</span> of water.</p>{% endif %}
+            {% if finalPrice %}<p>You spend <span class="number">${{ finalPrice }}</span> on electricity and use <span class="number">{{ finalWatt }} kilowatts</span> of electricity.</p>{% endif %}
+            {% if cubmtrPrice %}<p>You spend <span class="number">${{ cubmtrPrice }}</span> on water and use <span class="number">{{ cubmtrperday }} cubic metres</span> of water.</p>{% endif %}
         </div>
         <div id="Yearly" class="tabcontent">
-            {% if yearlyPrice %}<p>Every year, you spend <span class="number">${{ yearlyPrice }}</span> on electricity and use <span class="number">{{ yearlyWatt }} kilowatts</span> of electricity.</p>{% endif %}
-            {% if yearlyCubmtrPrice %}<p>Every year, you spend <span class="number">${{ yearlyCubmtrPrice }}</span> on water and use <span class="number">{{ yearlyCubmtr }} cubic metres</span> of water.</p>{% endif %}
+            {% if yearlyPrice %}<p>You spend <span class="number">${{ yearlyPrice }}</span> on electricity and use <span class="number">{{ yearlyWatt }} kilowatts</span> of electricity.</p>{% endif %}
+            {% if yearlyCubmtrPrice %}<p>You spend <span class="number">${{ yearlyCubmtrPrice }}</span> on water and use <span class="number">{{ yearlyCubmtr }} cubic metres</span> of water.</p>{% endif %}
         </div>
     </div>
     <div id="tips">
@@ -101,23 +101,18 @@ function openTimeFrames(evt, timeframe) {
   document.getElementById(timeframe).style.display = "block";
   evt.currentTarget.className += " active";
 }
-
-function dualCalculate() {
-    var content = document.getElementById('calcElc');
-    var content2 = document.getElementById('calcWtr');
-    if (content.val.length > 0) {
-        document.getElementById('calcElc').click();
-    }
-    else if (content2.val.length > 0) {
-        document.getElementById('calcWtr').click();
-        }
-}
 </script>
 
 <script>
 {% if openTab %}
 document.getElementById("defaultOpen").click();
+document.getElementById("results").scrollIntoView();
 {% endif %}
 </script>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white"></p>
+    </div>
+</footer>
 </body>
 </html>
